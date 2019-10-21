@@ -2,6 +2,7 @@ package com.example.calculadoraevaluacion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         instancias();
         acciones();
+        if(getApplication().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            accionesLand();
+        }
+
     }
 
     private void instancias(){
@@ -68,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         entre.setOnClickListener(this);
         borr.setOnClickListener(this);
         salida.setOnClickListener(this);
+    }
+    private void accionesLand()
+    {
         seno.setOnClickListener(this);
         coseno.setOnClickListener(this);
         tangente.setOnClickListener(this);
